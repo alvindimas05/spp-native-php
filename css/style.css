@@ -1,0 +1,241 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+	background: rgb(247, 236, 236);
+}
+
+.head {
+	background: rgba(2, 221, 255, 0.786);
+	padding: 20px;
+	width: 97,5%;
+	box-shadow: 0 2px 2px #d3d3d3;
+	text-align: center;
+	color: white;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 2px solid #000000;
+	padding: 2vh;
+}
+
+.links {
+	display: flex;
+}
+
+.links li {
+	margin: 0 10px;
+}
+.links a {
+	color: black;
+}
+
+.samping {
+	padding-right: 100px;
+}
+
+.links li:hover {
+	border-bottom: 2px solid blue;
+}
+
+.container {
+	padding-top: 2vh;
+	margin-left: 5rem;
+	margin-right: 5rem;
+	margin-bottom: 50px;
+
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	height: 30px;
+	background-color: rgba(2, 221, 255, 0.786);
+	width: 100%;
+	padding-top: 20px;
+	color: white;
+	text-align: center;
+}
+
+.col {
+	background: #fff;
+	width: 98%;
+	padding: 15px 0px 15px 25px;
+	border-radius: 10px;
+	box-shadow: 0 0 3px #d3d3d3;
+}
+
+.card {
+	margin: 50px auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: #fff;
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 0 3px #d3d3d3;
+
+}
+
+.card-header {
+	border-bottom: 3px solid  rgba(2, 221, 255, 0.786);
+	padding: 25px;
+}
+
+.btn {
+	padding: 8px;
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 0 0 2px  rgba(2, 221, 255, 0.786);
+	font-size: 10pt;
+}
+
+.btn-tambah {
+	color: #fff;
+	background:   rgba(2, 221, 255, 0.786);
+}
+
+.btn-tambah:hover {
+	border:  1px solid  rgba(2, 221, 255, 0.786);
+	background: #fff  ;
+	color: black;
+}
+
+table {
+	margin: 10px auto;
+	width: 98%;
+	border-collapse: collapse;
+	border: 1px solid #eaeaea;
+	text-align: center;
+}
+
+th{
+	background:rgba(2, 221, 255, 0.786);
+	color: #fff;
+	height: 20px;
+	padding: 20px;
+
+}
+
+tr {
+	border: 1px solid #eaeaea;
+
+}
+
+tr:hover {
+	background: #eaeaea;
+}
+
+td {
+	padding: 8px;
+	height: 25px;
+
+}
+
+fieldset {
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.form-group {
+	display: block;
+	margin-top: 10px;
+}
+
+label {
+	display: inline-block;
+	margin: 3px 0 5px 0;
+	width: 20%;
+}
+
+.form-control {
+	display: block;
+	width: 50%;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: black;
+	background: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+}
+
+.btn-save {
+	margin-top: 20px;
+	border: 1px solid rgba(2, 221, 255, 0.786);	
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+  width: 100px;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #e0a800;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 18px;
+}
+
+.text-success {
+  color: #28a745;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.search-button {
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}
+
+.text-danger {
+	color: red;
+}
