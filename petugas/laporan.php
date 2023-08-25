@@ -19,13 +19,16 @@
                     <th>Sudah Dibayar</th>
                     <th>Tanggal Bayar</th>
                     <th>Petugas</th>
+                    <th>Cetak</th>
+
                 </tr>
             </thead>
             <tbody>
                 <?php
                 include '../koneksi.php';
+                
                 $no = 1;
-                $query = mysqli_query($koneksi, "SELECT * FROM pembayaran, petugas, kelas, siswa, spp WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp AND pembayaran.nisn=siswa.nisn AND pembayaran.id_petugas=petugas.id_petugas ORDER BY tgl_bayar DESC");
+                $query = mysqli_query($koneksi, "SELECT *, pembayaran.id_pembayaran FROM pembayaran, petugas, kelas, siswa, spp WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp AND pembayaran.nisn=siswa.nisn AND pembayaran.id_petugas=petugas.id_petugas ORDER BY tgl_bayar DESC");
                 while ($data = mysqli_fetch_array($query)) {
 
                     $petugas = mysqli_query($koneksi, "SELECT * FROM petugas WHERE id_petugas='$data[id_petugas]'");
@@ -41,7 +44,9 @@
                         <td>Rp. <?= number_format($data['jumlah_bayar']); ?></td>
                         <td><?= $data['tgl_bayar']; ?></td>
                         <td><?= $petugas['nama_petugas']; ?></td>
-
+                        <td>
+                            <a href="cetak_nota.php?nisn=<?= $data['nisn']; ?>&id_pembayaran=<?= $data['id_pembayaran']; ?>" target="_blank" class="btn btn-tambah">Cetak</a>
+                        </td>
                     </tr>
                 <?php
                 }
