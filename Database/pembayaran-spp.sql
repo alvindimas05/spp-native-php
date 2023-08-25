@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Jul 2023 pada 06.27
+-- Waktu pembuatan: 25 Agu 2023 pada 05.37
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -60,8 +60,7 @@ CREATE TABLE `kelas` (
 INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `kompetensi_keahlian`) VALUES
 (1, 'X RPL 1', 'REKAYASA PERANGKAT LUNAK'),
 (2, 'X RPL 2', 'REKAYASA PERANGKAT LUNAK'),
-(3, 'X TKJ 2', 'TEKNIK KOMPUTER JARINGAN'),
-(12, 'QEWQW', 'QWR');
+(3, 'X TKJ 1', 'REKAYASA PERANGKAT LUNAK');
 
 -- --------------------------------------------------------
 
@@ -85,16 +84,10 @@ CREATE TABLE `pembayaran` (
 --
 
 INSERT INTO `pembayaran` (`id_pembayaran`, `id_petugas`, `nisn`, `tgl_bayar`, `bulan_dibayar`, `tahun_dibayar`, `id_spp`, `jumlah_bayar`) VALUES
-(11, 1, '250135', '2023-06-07', 'Maret', '2023', 1, 1000000),
-(12, 1, '250135', '2023-06-21', 'Mei', '2021', 1, 1000000),
-(13, 2, '24485', '2023-06-19', 'April', '2023', 1, 500000),
-(15, 1, '24485', '2023-07-01', 'Juli', '2021', 1, 2500000),
-(17, 1, '1234', '2023-06-15', 'Januari', '2020', 1, 500000),
-(18, 1, '1234', '2023-06-11', 'Juni', '2018', 1, 1000000),
-(19, 3, '2312434', '2023-07-13', 'Agustus', '2023', 1, 2000000),
-(20, 3, '23123123', '2023-07-22', 'April', '2020', 1, 342343),
-(21, 3, '23123123', '2023-07-17', 'Februari', '2016', 2, 2600000),
-(22, 3, '21321321', '2023-07-10', 'Juli', '2023', 3, 3000000);
+(15, 1, '12121', '2023-08-19', 'Januari', '2023', 10, 3000000),
+(16, 1, '12121', '2023-08-19', 'Februari', '2023', 10, 1000000),
+(17, 2, '12345', '2023-08-19', 'Januari', '2023', 10, 4000000),
+(18, 1, '123456', '2023-08-24', 'Agustus', '2023', 10, 2500000);
 
 -- --------------------------------------------------------
 
@@ -115,10 +108,8 @@ CREATE TABLE `petugas` (
 --
 
 INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `level`) VALUES
-(1, 'Administrator', 'admin', 'admin', 'admin'),
-(2, 'petugas', 'petugas', 'petugas', 'petugas'),
-(3, 'admin', 'admin', 'admin', 'admin'),
-(4, 'dfsdf', 'sdf', 'sdfsd', 'admin');
+(1, 'Novianti', 'admin', 'Novianti', 'admin'),
+(2, 'agung', 'petugas', 'agung', 'petugas');
 
 -- --------------------------------------------------------
 
@@ -127,7 +118,7 @@ INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `le
 --
 
 CREATE TABLE `siswa` (
-  `nisn` char(10) NOT NULL,
+  `nisn` int(10) NOT NULL,
   `nis` char(8) NOT NULL,
   `nama` varchar(35) NOT NULL,
   `id_kelas` int(11) NOT NULL,
@@ -141,9 +132,9 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`nisn`, `nis`, `nama`, `id_kelas`, `alamat`, `no_telp`, `id_spp`) VALUES
-('1234', '1234', 'Kalkun', 1, 'Kalkun', '0893244234', 1),
-('21321321', '21331212', 'Ponco', 3, 'New York city, Tambun', '0892324213', 2),
-('250135', '22135', 'polio', 2, 'miyuk', '0854535486', 1);
+(12121, '121212', 'ade', 1, 'adascs', '08342423443', 10),
+(123456, '123456', 'Aris Hendra', 2, 'banten', '08454356346', 11),
+(1234531, '1234531', 'Eret', 2, 'tokyo', '08752767564', 11);
 
 -- --------------------------------------------------------
 
@@ -162,11 +153,8 @@ CREATE TABLE `spp` (
 --
 
 INSERT INTO `spp` (`id_spp`, `tahun`, `nominal`) VALUES
-(1, 2023, 2000000),
-(2, 2023, 3000000),
-(3, 2023, 5000000),
-(5, 2023, 2500000),
-(7, 2022, 2000000);
+(10, 2023, 4000000),
+(11, 2923, 5000000);
 
 --
 -- Indexes for dumped tables
@@ -212,13 +200,13 @@ ALTER TABLE `spp`
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `petugas`
@@ -227,10 +215,16 @@ ALTER TABLE `petugas`
   MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT untuk tabel `siswa`
+--
+ALTER TABLE `siswa`
+  MODIFY `nisn` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1234532;
+
+--
 -- AUTO_INCREMENT untuk tabel `spp`
 --
 ALTER TABLE `spp`
-  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
