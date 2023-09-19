@@ -3,9 +3,22 @@
 </div>
 
 <div class="card">
-    <div class="card-header">
-        <a href="cetak_laporan.php" target="_BLANK" class="btn btn-tambah">Cetak Laporan</a>
-    </div>
+    <form class="card p-4" action="laporan2.php" method="GET" target="_blank">
+        <div class="card-header">
+            <b>Laporan Pembayaran</b>
+        </div>
+        <div class="table">
+            <div class="form-group">
+                <label for="tgl1">Mulai Tanggal:</label>
+                <input class="form-control" type="date" id="tgl1" name="tgl1" value="2023-09-19">
+            </div>
+            <div class="form-group">
+                <label for="tgl2">Sampai Ta-nggal:</label>
+                <input class="form-control" type="date" id="tgl2" name="tgl2" value="2023-09-19">
+            </div>
+            <button class="btn btn-tampilkan" type="submit" name="tampil">Tampilkan</button>
+        </div>
+    </form>
     <div class="card-body">
         <table class="table table-striped" id="contoh">
             <thead>
@@ -26,7 +39,7 @@
             <tbody>
                 <?php
                 include '../koneksi.php';
-                
+
                 $no = 1;
                 $query = mysqli_query($koneksi, "SELECT *, pembayaran.id_pembayaran FROM pembayaran, petugas, kelas, siswa, spp WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp AND pembayaran.nisn=siswa.nisn AND pembayaran.id_petugas=petugas.id_petugas ORDER BY tgl_bayar DESC");
                 while ($data = mysqli_fetch_array($query)) {
