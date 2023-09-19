@@ -49,9 +49,11 @@ if (empty($_SESSION['id_petugas'])) {
             <?php
             if ($_SESSION['level'] == 'admin') {
             ?>
-                <li><a href="?hal=laporan">Histori Pembayaran</a></li>
+                <li><a href="?hal=laporan">Laporan</a> </li>
+         
+
             <?php } ?>
-            <div class="samping">
+            <div class="">
                 <li><a href="../logout.php" onclick="return confirm('Anda Yakin Akan Keluar')">Logout</a></li>
             </div>
         </ul>
@@ -81,18 +83,15 @@ if (empty($_SESSION['id_petugas'])) {
             // Tampilkan halaman beranda jika parameter hal tidak ada
             ?>
             <div class="col">
-                <h2 class="judul">Selamat datang <b><?= $_SESSION['nama_petugas'] ?></b></h4>
-                    Di halaman <?= $_SESSION['level'] ?> <br>
-                    Aplikasi Pembayaran SPP Digunakan untuk mempermudah dalam pembayaran SPP Siswa / Siswi di Sekolah</h2>
+                <h2 class="judul">Selamat datang <b><?= $_SESSION['nama_petugas'] ?></b></h2>
+                Di halaman <?= $_SESSION['level'] ?> <br>
+                Aplikasi Pembayaran SPP Digunakan untuk mempermudah dalam pembayaran SPP Siswa / Siswi di Sekolah</h2>
             </div>
         <?php
         }
         ?>
 
 
-    </div>
-
-    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
