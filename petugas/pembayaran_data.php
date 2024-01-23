@@ -37,6 +37,9 @@
                     $pembayaran = mysqli_fetch_array($pembayaran);
                     $kekurangan = $pembayaran['jumlah_bayar'];
                     $kekurangan = $data['nominal'] - $pembayaran['jumlah_bayar'];
+                    if ($kekurangan < 0) {
+                        $kekurangan = 0;
+                    }
                 ?>
                     <tr>
                         <td><?= $no++; ?></td>
