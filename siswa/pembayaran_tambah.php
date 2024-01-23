@@ -4,6 +4,9 @@ $nisn = $_SESSION['nisn'];
 $kekurangan = $_GET['kekurangan'];
 $query = mysqli_query($koneksi, "SELECT * FROM siswa, spp, kelas WHERE siswa.id_kelas = kelas.id_kelas  AND siswa.id_spp = spp.id_spp AND siswa.nisn='$nisn'");
 $data = mysqli_fetch_array($query);
+
+$denda = 100000;
+$tahun_denda = intval(date("Y")) - intval($data["tahun"]);
 ?>
 
 <h2>Bayar SPP</h2>
@@ -69,8 +72,8 @@ $data = mysqli_fetch_array($query);
         </select>
     </div>
     <div class="form-group mb-2">
-        <label>Jumlah SPP (yang harus dibayar <b class="text-danger">Rp. <?= number_format($kekurangan); ?></b>)</label>
-        <input type="number" class="form-control" name="jumlah_bayar" max="<?= $kekurangan; ?>" required>
+        <label style="width: 100%">Jumlah SPP (yang harus dibayar <?php if($tahun_denda > 0){ echo "dengan denda"; } ?> <b class="text-danger">Rp. <?= number_format($kekurangan + ($denda * $tahun_denda)); ?></b>)</label>
+        <input type="number" class="form-control" name="jumlah_bayar" max="<?= $$kekurangan + ($denda * $tahun_denda); ?>" required>
     </div>
     <div class="form-group mb-2">
         <input type="submit" class="btn btn-tambah" name="simpan" value="Simpan">
