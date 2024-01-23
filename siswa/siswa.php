@@ -32,8 +32,8 @@ if (empty($_SESSION['nisn'])) {
             </div>
 
             <ul class="links">
-                <li> <a href="?hal=history_pembayaran" class="btn btn-tambah">History Pembayaran</a>
-                </li>
+                <li> <a href="?hal=pembayaran_data" class="btn btn-tambah">Tagihan Pembayaran</a></li>
+                <li> <a href="?hal=history_pembayaran" class="btn btn-tambah">History Pembayaran</a></li>
                 <li><a href="../logout.php" class="btn btn-tambah" onclick="return confirm('Anda Yakin Akan Keluar')">Logout</a></li>
 
             </ul>

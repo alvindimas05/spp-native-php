@@ -30,7 +30,8 @@
                 <?php
                 include '../koneksi.php';
                 $no = 1;
-                $query = mysqli_query($koneksi, "SELECT * FROM siswa, spp, kelas WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp");
+                $nisn = $_SESSION["nisn"];
+                $query = mysqli_query($koneksi, "SELECT * FROM siswa, spp, kelas WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp AND nisn='$nisn'");
                 while ($data = mysqli_fetch_array($query)) {
 
                     $pembayaran = mysqli_query($koneksi, "SELECT SUM(jumlah_bayar) AS jumlah_bayar FROM pembayaran WHERE nisn='$data[nisn]'");
@@ -52,7 +53,7 @@
                             if ($kekurangan == 0) {
                                 echo '<b class="text-success">Lunas</b>';
                             } else {
-                                echo '<a href="?hal=pembayaran_tambah&nisn=' . $data['nisn'] . '&kekurangan=' . $kekurangan . '" class="btn btn-danger">Bayar</a>';
+                                echo '<a href="?hal=pembayaran_tambah&kekurangan=' . $kekurangan . '" class="btn btn-danger">Bayar</a>';
                             }
                             ?>
                         </td>
