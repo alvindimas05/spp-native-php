@@ -25,7 +25,7 @@ if (empty($_SESSION['id_petugas'])) {
 <body>
     <div class="head">
         <h2 class="head-text">Pembayaran SPP</h2>
-        <h2 class="head-text">SMKN 2 BANDAR LAMPUNG</h2>
+        <h2 class="head-text">SMKN 2 SURAKARTA</h2>
     </div>
     <!-- identitas website -->
 

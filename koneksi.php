@@ -1,6 +1,6 @@
 <?php
 
-$koneksi = mysqli_connect('localhost', 'root', '', 'spp-terakhir');
+$koneksi = mysqli_connect('localhost', 'root', 'adp050107', 'spp-terakhir');
 
 
 ?>

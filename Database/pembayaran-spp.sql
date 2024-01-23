@@ -23,14 +23,6 @@ SET time_zone = "+00:00";
 
 DELIMITER $$
 --
--- Prosedur
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getKelas` ()   BEGIN
-SELECT*FROM kelas;
-
-END$$
-
---
 -- Fungsi
 --
 CREATE DEFINER=`root`@`localhost` FUNCTION `sppTertinggi` () RETURNS INT(11)  BEGIN
